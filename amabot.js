@@ -1,3 +1,5 @@
+//One day it stopped working and adding this fixed it. I don't like it and I don't know how to get rid of it.
+
 process.on('error', function(error, msg, next) {
   //console.error(JSON.stringify(error, null, 2));
   console.log("error")
@@ -11,6 +13,18 @@ process.on('uncaughtException', function (error, msg, why) {
 });
 
 password = "password"
+// Create the configuration
+var config = {
+	channels: ["##botters-test"],
+	server: "irc.freenode.org",
+	botName: "AMAbotClone",
+	sasl: false,
+	secure: false,
+	password: password
+};
+
+
+
 gens = 10 //10
 iters = 20000 //20000
 
@@ -19,15 +33,6 @@ var natural = require('natural');
 fs = require('fs')
 brain = require('brain')
 
-// Create the configuration
-var config = {
-	channels: ["##bottest", "#futurology", "#mybots", "#futuristparty", "#AMAbot"],
-	server: "irc.snoonet.org",
-	botName: "AMAbot",
-	sasl: false,
-	secure: false,
-	password: password
-};
 
 var maxLength = 500;
 var maxNewlines = 6;
@@ -782,14 +787,3 @@ function getComment(permalink, callback1, threadDat, threadNum, totalResults, pr
 }
 load()
 newBot(config)
-
-var config2 = {
-	channels: ["#lw-bots", "#lesswrong"],
-	server: "chat.freenode.net",
-	botName: "AMAbot",
-	sasl: false,
-	secure: false,
-	password: password
-};
-
-newBot(config2)
