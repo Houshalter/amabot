@@ -296,7 +296,7 @@ function test(){
 }
 
 function load(){
-	fs.readFile("C:\\Users\\Daniel\\Documents\\Programming\\AMAbotData.txt", "utf8", function (err,data) {
+	fs.readFile("AMAbotData.txt", "utf8", function (err,data) {
 	  if (err) {
 		return console.log(err);
 	  }
@@ -640,7 +640,7 @@ bot.addListener("message", function(from, to, text, message) {
 	if (command == "save"){
 		console.log("saving...");
 		bot.say(replyTo, "Saving...")
-		save(JSON.stringify(rawDataset), "C:\\Users\\Daniel\\Documents\\Programming\\AMAbotData.txt");
+		save(JSON.stringify(rawDataset), "AMAbotData.txt");
 	}
 	if (command == "yes" || command == "no"){
 		if (replyTo in activeChannels && "last" in activeChannels[replyTo]){
